@@ -1,5 +1,5 @@
 # SpringBoot 使用mongoDB简单示例
-测试数据库
+测试数据库，库名mydb，集合名student
 ```mongo
 {"_id":{"$oid":"5d29fd151dfa24b300966f35"},"id":{"$numberLong":"1"},"name":"小红","score":80,"interest":"足球","grade":1}
 {"_id":{"$oid":"5d29fd151dfa24b300966f36"},"id":{"$numberLong":"2"},"name":"小华","score":88,"interest":"篮球","grade":1}
