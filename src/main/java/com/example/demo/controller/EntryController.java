@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class EntryController {
     @RequestMapping("/")
     private String index(){
-        return "这是一个mybatis示例代码!";
+        return "这是一个SpringBoot中使用mongoDB的示例代码!";
     }
 }
