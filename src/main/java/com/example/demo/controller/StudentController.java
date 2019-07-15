@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.common.MongoManager;
+import com.example.demo.model.StatisResult;
 import com.example.demo.model.Student;
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +20,7 @@ import java.util.List;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping("/student")
-public class StuentController {
+public class StudentController {
 
     @Autowired
     private MongoManager mongoManager;
@@ -39,6 +41,12 @@ public class StuentController {
     public List<Student> getAllStudent() {
         List<Student> studentList = this.mongoManager.getAllStudent();
         return studentList;
+    }
+
+    @RequestMapping(value = "/group", method = RequestMethod.GET, produces = "application/json")
+    public List<StatisResult> getGroupResult() {
+        List<StatisResult> statisResultList = this.mongoManager.aggregationTest();
+        return statisResultList;
     }
 
 }
